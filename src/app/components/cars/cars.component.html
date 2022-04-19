@@ -16,7 +16,7 @@
     <td>{{car.brand}}</td>
     <td *ngIf="car.sold;else elseBlock">Vendu</td>
     <td><button type="button" (click)="carModif(car)"  class="btn btn-primary">Modifier</button></td>
-
+    <td><button type="button" (click)="onDeleteCar(car.id!)" class="btn btn-primary">Supprimer</button></td>
     <td><button type="button" class="btn btn-primary">Details</button></td>
   </tr>
   </tbody>

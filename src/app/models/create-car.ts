@@ -8,9 +8,9 @@ export interface CreateCar {
   mileage: string;
   fuel: string;
   color: string;
-  number_doors : number;
+  numbers_doors : number;
   horse_power : number;
   price : number;
   pictures : string[];
-  sold : string
+  sold : boolean
 }

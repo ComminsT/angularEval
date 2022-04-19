@@ -7,7 +7,7 @@ import {ModifyCarComponent} from "./components/modify-car/modify-car.component";
 const routes: Routes = [
   {path:'',component: CarsComponent},
   {path:'carModif/:id',component: ModifyCarComponent},
-  {path:'newCar',component:NewCarComponent},
+  {path:'newCar',component: NewCarComponent},
   {path:'**',redirectTo:''}
 ];
 

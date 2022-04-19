@@ -9,7 +9,7 @@ export interface Car {
   mileage: string;
   fuel: string;
   color: string;
-  number_doors : number;
+  numbers_doors : number;
   horse_power : number;
   price : number;
   pictures : string[];

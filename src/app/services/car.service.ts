@@ -32,9 +32,12 @@ export class CarService {
   create(car: CreateCar): Observable<Car[]> {
     return this.http.post<Car[]>(`${this.BASE_URL}/cars`, car, this.httpOptions)
   }
+  update(car:Car):Observable<Car[]>{
+    return this.http.put<Car[]>(`${this.BASE_URL}/cars/${car.id}`, car, this.httpOptions)
 
-  fetchOne(id: number) :Observable<Car> {
-    console.log("test");
+  }
+
+  fetchOne(id: string | number | null) :Observable<Car> {
     console.log(`${this.BASE_URL}/cars/${id}`)
     return this.http.get <Car> (`${this.BASE_URL}/cars/${id}`)
   }

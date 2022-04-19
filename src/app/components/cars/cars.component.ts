@@ -30,11 +30,12 @@ export class CarsComponent implements OnInit {
         }
       });
   }
-  // onDeleteCar(id:number):void {
-  //   this.carService.deleteOne(id).subscribe({
-  //     next:ok=>{}
-  //   });
-  // }
+  onDeleteCar(id:number):void {
+    this.carService.deleteOne(id).subscribe({
+      next:ok=>{}
+    });
+    location.reload()
+  }
 
   carModif(car : Car) {
     this.router.navigate(['carModif/'+car.id]);
