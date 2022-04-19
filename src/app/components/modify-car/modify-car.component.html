@@ -1,0 +1,62 @@
+<form *ngIf="!!car" [formGroup]="createCarForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label  for="carTitle"></label>
+    <input formControlName="title" type="text" class="form-control" id="carTitle" [value]="car.title"   >
+  </div>
+  <div class="form-group">
+    <label  for="carAddress">Adresse </label>
+    <input formControlName="address" type="text" class="form-control" id="carAddress"   >
+  </div>
+  <div class="form-group">
+    <label  for="carBrand">Marque </label>
+    <input formControlName="brand" type="text" class="form-control" id="carBrand"   >
+  </div>
+  <div class="form-group">
+    <label  for="carModel">Model </label>
+    <input formControlName="model" type="text" class="form-control" id="carModel"   >
+  </div>
+  <div class="form-group">
+    <label  for="carModelYear">Année </label>
+    <input formControlName="model_year" type="text" class="form-control" id="carModelYear"   >
+  </div>
+  <div class="form-group">
+    <label  for="carIssuance">Année de mise en circulation </label>
+    <input formControlName="issuance" type="text" class="form-control" id="carIssuance"   >
+  </div>
+  <div class="form-group">
+    <label  for="carMileage">Kilométrage </label>
+    <input formControlName="mileage" type="text" class="form-control" id="carMileage"   >
+  </div>
+  <div class="form-group">
+    <label  for="carFuel">Fuel </label>
+    <input formControlName="fuel" type="text" class="form-control" id="carFuel"  >
+  </div>
+  <div class="form-group">
+    <label  for="carColor">Couleur </label>
+    <input formControlName="color" type="text" class="form-control" id="carColor"  >
+  </div>
+  <div class="form-group">
+    <label  for="carNumberDoors">Nombre de porte </label>
+    <input formControlName="number_doors" type="text" class="form-control" id="carNumberDoors"  >
+  </div>
+  <div class="form-group">
+    <label  for="carHorsePower">puissance </label>
+    <input formControlName="horse_power" type="text" class="form-control" id="carHorsePower"  >
+  </div>
+  <div class="form-group">
+    <label  for="carPrice">Prix </label>
+    <input formControlName="price" type="text" class="form-control" id="carPrice"  >
+  </div>
+  <div class="form-group">
+<!--    <label  for="carPictures">Images </label>-->
+<!--    <input *ngFor="let images of car.pictures " formControlName="pictures" type="text" class="form-control" id="carPictures"  >-->
+  </div>
+  <div class="form-check">
+  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+</div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+

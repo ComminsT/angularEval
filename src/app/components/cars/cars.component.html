@@ -1,0 +1,25 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Title</th>
+    <th scope="col">Address</th>
+    <th scope="col">Brand</th>
+    <th scope="col">Sold</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let car of cars">
+  <tr >
+    <th scope="row">{{car.id}}</th>
+    <td>{{car.title}}</td>
+    <td>{{car.address}}</td>
+    <td>{{car.brand}}</td>
+    <td *ngIf="car.sold;else elseBlock">Vendu</td>
+    <td><button type="button" (click)="carModif(car)"  class="btn btn-primary">Modifier</button></td>
+
+    <td><button type="button" class="btn btn-primary">Details</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #elseBlock>En vente</ng-template>

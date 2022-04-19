@@ -1,18 +1,34 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import localeFR from '@angular/common/locales/fr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NewCarComponent } from './components/new-car/new-car.component';
+import { ModifyCarComponent } from './components/modify-car/modify-car.component';
+import { CarDetailsComponent } from './components/car-details/car-details.component';
+import { CarsComponent } from './components/cars/cars.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import {registerLocaleData} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
+registerLocaleData(localeFR);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewCarComponent,
+    ModifyCarComponent,
+    CarDetailsComponent,
+    CarsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'fr'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
