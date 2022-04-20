@@ -41,4 +41,9 @@ export class CarService {
     console.log(`${this.BASE_URL}/cars/${id}`)
     return this.http.get <Car> (`${this.BASE_URL}/cars/${id}`)
   }
+
+  searchByTitle(word: string) :Observable<Car[]>{
+    console.log(word)
+    return this.http.get<Car[]>(`${this.BASE_URL}/cars?title_like=${word}`);
+  }
 }

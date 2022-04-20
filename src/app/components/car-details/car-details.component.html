@@ -1,1 +1,26 @@
-<p>car-details works!</p>
+<div>
+  <div>
+    <div>
+      <div *ngFor="let picture of car.pictures">
+        <img [src]="picture">
+      </div>
+      <div>
+        <h5>{{car.title}}</h5>
+        <h6>{{car.price | currency: 'EUR':'symbol'}}</h6>
+        <span>{{car.address}}<br></span>
+        <span>{{car.brand}}<br></span>
+        <span>{{car.model}}<br></span>
+        <span>{{car.model_year}}<br></span>
+        <span>{{car.issuance}}<br></span>
+        <span>{{car.mileage}}<br></span>
+        <span>{{car.fuel}}<br></span>
+        <span>{{car.color}}<br></span>
+        <span>{{car.numbers_doors}}<br></span>
+        <span>{{car.horse_power}}<br></span>
+        <span *ngIf="car.sold; else elseBlock">Vendu<br></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #elseBlock>Disponible<br></ng-template>

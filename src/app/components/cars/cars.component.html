@@ -1,5 +1,11 @@
 
-<button (click)="sortPrice()"> Filtrer par prix</button>
+<button class="btn btn-primary" (click)="sortPrice()"> Filtrer par prix</button>
+<form method="post" [formGroup]="filterCars" (ngSubmit)="search(filterCars.controls)">
+<input placeholder="Recherche par mot" formControlName="searchedWord" type="text">
+<button class="btn btn-primary" type="submit">Search</button>
+</form>
+<button class="btn btn-primary" (click)="resetFilter()">Réinitialiser</button>
+
 
 
 <table class="table table-hover">
@@ -21,9 +27,11 @@
     <td *ngIf="car.sold;else elseBlock">Vendu</td>
     <td><button type="button" (click)="carModif(car)"  class="btn btn-primary">Modifier</button></td>
     <td><button type="button" (click)="onDeleteCar(car.id!)" class="btn btn-primary">Supprimer</button></td>
-    <td><button type="button" class="btn btn-primary">Details</button></td>
+    <td><button type="button" (click)="onDetails(car)" class="btn btn-primary">Details</button></td>
   </tr>
   </tbody>
+
 </table>
+<app-car-details *ngIf="selectedCar!=null" [carParam]="selectedCar"></app-car-details>
 
 <ng-template #elseBlock>En vente</ng-template>
