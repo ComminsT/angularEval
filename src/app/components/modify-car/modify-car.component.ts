@@ -2,9 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {CarService} from "../../services/car.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Car} from "../../models/car";
-import {CreateCar} from "../../models/create-car";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Observable, shareReplay} from "rxjs";
 
 @Component({
   selector: 'app-modify-car',
@@ -37,9 +35,6 @@ export class ModifyCarComponent implements OnInit {
       .subscribe(
         data => {
           this.car = data;
-          console.log(data);
-          console.log(this.car)
-          console.log(this.car.title)
           this.createCarForm = this.fb.group({
             title: [this.car.title, [Validators.required]],
             address: [this.car.address, [Validators.required]],

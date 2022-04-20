@@ -1,3 +1,7 @@
+
+<button (click)="sortPrice()"> Filtrer par prix</button>
+
+
 <table class="table table-hover">
   <thead>
   <tr>
@@ -8,7 +12,7 @@
     <th scope="col">Sold</th>
   </tr>
   </thead>
-  <tbody *ngFor="let car of cars">
+  <tbody *ngFor="let car of cars |sortByPrice: sortValue">
   <tr >
     <th scope="row">{{car.id}}</th>
     <td>{{car.title}}</td>

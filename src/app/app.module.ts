@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {registerLocaleData} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
+import { FilterPipe } from './pipess/filter.pipe';
 registerLocaleData(localeFR);
 
 @NgModule({
@@ -20,7 +21,8 @@ registerLocaleData(localeFR);
     ModifyCarComponent,
     CarDetailsComponent,
     CarsComponent,
-    NavbarComponent
+    NavbarComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

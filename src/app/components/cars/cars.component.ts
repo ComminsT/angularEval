@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Car} from "../../models/car";
 import {CarService} from "../../services/car.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-cars',
@@ -10,6 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class CarsComponent implements OnInit {
   cars : Car[]=[];
+  sortValue: string = 'ASC';
 
 
   constructor(private carService: CarService,
@@ -40,5 +42,9 @@ export class CarsComponent implements OnInit {
   carModif(car : Car) {
     this.router.navigate(['carModif/'+car.id]);
 
+  }
+
+  sortPrice() {
+    this.sortValue=(this.sortValue==='ASC'?'DESC':'ASC');
   }
 }
